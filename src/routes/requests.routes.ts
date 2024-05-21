@@ -126,7 +126,7 @@ if (
       requestsRouter.post(
         `/${action}`,
         async(req: Request, res: Response<{}, Locals>, next: NextFunction) => {
-          console.log(`Start time: ${new Date().toISOString}`)
+          console.log(`Start time: ${new Date().toISOString()}`)
           next();
         },
         jsonCompressorMiddleware,
