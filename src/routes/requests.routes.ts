@@ -123,8 +123,13 @@ if (
   const requestActions = getConfig().app.actions.requests;
   Object.keys(RequestActions).forEach((action) => {
     if (requestActions[action as RequestActions]) {
+      let startTime = Date.now();
       requestsRouter.post(
         `/${action}`,
+        async(req: Request, res: Response<{}, Locals>, next: NextFunction) => {
+          console.log(`Start time: ${startTime}`)
+          next();
+        },
         jsonCompressorMiddleware,
         authValidatorMiddleware,
         //openApiValidatorMiddleware,

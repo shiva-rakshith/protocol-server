@@ -23,6 +23,7 @@ export const bppNetworkRequestHandler = async (
 ) => {
   try {
     acknowledgeACK(res, req.body.context);
+    console.log(`End time: ${Date.now()}`)
 
     const message_id = req.body.context.message_id;
     const transaction_id = req.body.context.transaction_id;
