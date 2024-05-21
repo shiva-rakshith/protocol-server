@@ -127,7 +127,7 @@ if (
         `/${action}`,
         jsonCompressorMiddleware,
         authValidatorMiddleware,
-        openApiValidatorMiddleware,
+        //openApiValidatorMiddleware,
         async (req: Request, res: Response<{}, Locals>, next: NextFunction) => {
           await bppNetworkRequestHandler(
             req,

@@ -34,7 +34,7 @@ if (
         `/${action}`,
         jsonCompressorMiddleware,
         authValidatorMiddleware,
-        openApiValidatorMiddleware,
+        // openApiValidatorMiddleware,
         async (req: Request, res: Response, next: NextFunction) => {
           logger.info(`response from bpp: ${JSON.stringify(req.body)}`);
           await bapNetworkResponseHandler(
@@ -72,7 +72,7 @@ if (
           await contextBuilderMiddleware(req, res, next, action);
         },
         authBuilderMiddleware,
-        openApiValidatorMiddleware,
+        // openApiValidatorMiddleware,
         async (req: Request, res: Response, next: NextFunction) => {
           await bppClientResponseHandler(
             req,
